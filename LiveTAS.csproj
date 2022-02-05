@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\benh\OneDrive\Documents\source\publish\liveTAS\</PublishUrl>
+    <PublishUrl>C:\Users\benh\OneDrive\Documents\source\repos\LiveTAS\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -30,7 +30,7 @@
     <AutorunEnabled>true</AutorunEnabled>
     <DisallowUrlActivation>true</DisallowUrlActivation>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.0.2.0</ApplicationVersion>
+    <ApplicationVersion>0.0.3.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
