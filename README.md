@@ -11,20 +11,20 @@ I would also recommend that you do not leave your computer unattended while you 
 
 ### FAQs
 
-Q: How do I run LiveTAS on my computer?
+##### Q: How do I run LiveTAS on my computer?
 
 A: Download the ZIP file of this program from github. Open the file inside it called "publish", and double-click on setup.exe. This will install the program onto your computer.
       You can then open LiveTAS from the start menu whenever you want.
 
 
 
-Q: How do I update to the latest version?
+##### Q: How do I update to the latest version?
 
 A: Follow the steps above to install the latest version of LiveTAS from github. It's as simple as that!
 
 
 
-Q: Where can I find the input recordings that LiveTAS has made on my computer?
+##### Q: Where can I find the input recordings that LiveTAS has made on my computer?
 
 A: When you first open a new version of LiveTAS, it will ask you to give it a folder on your computer to store its data in.
       From then on, all recordings will be recorded to a folder called Input Sequences in that folder.
@@ -32,7 +32,7 @@ A: When you first open a new version of LiveTAS, it will ask you to give it a fo
       
       
       
-Q: I want to edit a file of recorded inputs. What does all the writing in it mean?
+##### Q: I want to edit a file of recorded inputs. What does all the writing in it mean?
 
 A: In the same folder as the Input Sequences folder, there should be a file called Instructions.txt . This contains an explanation of the format inputs are recorded in.
       If you still have questions, feel free to ask about it in issues and I'll clarify for you!
