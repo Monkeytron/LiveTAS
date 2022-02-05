@@ -78,14 +78,12 @@ namespace LiveTAS
                     switch (Methods.GetChoice("1", "2", "3"))
                     {
                         case "1":
-                            Console.WriteLine("This feature is currently disabled.");
-                            Thread.Sleep(messageWait);
+                            PlayAnInputFile();
                             Console.Clear();
                             //PlayAnInputFile();
                             break;
                         case "2":
-                            Console.WriteLine("This feature is currently disabled.");
-                            Thread.Sleep(messageWait);
+                            RecordInputs();
                             Console.Clear();
                             //RecordInputs();
                             break;
