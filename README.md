@@ -1,7 +1,13 @@
 # LiveTAS
-DO NOT DOWNLOAD YET - still in testing phase.
+Record, edit and play back a series of key presses and mouse movements.
 
-LiveTAS is made for windows computers - it will almost certainly not work with other operating systems.
+LiveTAS is a tool for the windows OS that allows you to easily record a series of human inputs, edit the saved file and then play back the edited file.
+While it is recording, it will log when a key was pressed, which key was pressed and how long it was held for.
+
+### Word of warning:
+As this program is intended to record every key press, **PLEASE** do not type in passwords or sensitive infomation into your computer while you are recording with this program.
+I would also recommend that you do not leave your computer unattended while you are playing out an input file. This program takes control of your keyboard and mouse, which could cause problems if you let it loose on your PC.
+
 
 Q: How do I run LiveTAS on my computer?
 
