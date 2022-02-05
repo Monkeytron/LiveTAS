@@ -326,14 +326,14 @@ namespace LiveTAS
             });
 
             lines.Insert(0, stopStartKey.ToString());
-            Console.WriteLine("Write a short description about this TAS to be included in the first line of the file.");
+            Console.WriteLine("Write a short description about to be included in the first line of the file.");
             lines.Insert(0, Console.ReadLine().Trim());
-            Console.WriteLine("Now, write one line of instruction to be given to the user of the TAS");
+            Console.WriteLine("Now, write one line of instruction to be given to the user of this sequence.");
             lines.Insert(1, Console.ReadLine().Trim());
 
             File.WriteAllLines(fileName, lines);
 
-            Console.WriteLine("Your TAS has been saved successfully! (Press enter)");
+            Console.WriteLine("Your input sequence has been saved successfully! (Press enter)");
             Console.ReadLine();
             Thread.Sleep(700);
             Console.Clear();

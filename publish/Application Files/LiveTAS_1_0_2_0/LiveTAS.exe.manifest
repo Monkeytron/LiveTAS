@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="LiveTAS.exe" version="1.0.2.0" publicKeyToken="ab603607c34142c8" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Resources\Icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LiveTAS" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="LiveTAS.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LiveTAS.exe" size="580056">
+      <assemblyIdentity name="LiveTAS" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>cOiEgAgonPwG+NKhU4DXW9IhCPVk6DeTIBg6/nfDDxo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Instructions.txt" size="4109">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kUl5nqFOb9O1yCfC8k5aZspMKL5aaR8RSGLf4rEMCqw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="LiveTAS.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Icon.ico" size="273118">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>W/3iLf3MbrVybsZJOPXE+33hF/Ui9LbC+ENbbTSsl7k=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LAPTOP-PVDD0SCN\benh" issuerKeyHash="bd00590a9126b3b2e27a249f0a8cfe239320fb45" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>lywFrYQSnH9pUb3W+tXuQqxoASdXOHcPmRsDz6qVTuQ=</DigestValue></Reference></SignedInfo><SignatureValue>PPQpSChTnC3XRs+nMSCNRT9oBgwDOmDHizlsijZ1HbLvoqBbHg7GIbE3vwlHgl6I91lD35BK4eJoW8aKGHRXc+QEsnrp5Cnx/uQPmE86bjPIfCRVpU1VwYehWrUU1g0fiOj1NLkL+GJgAu27IoA79wWbTdw7mbsFpjkxEPlAXPU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>oSCqd6E73QNkGNhT/vbY9uNxZXUOSK5geQSTlA5iEay6xotU4qt988Y0roXgYvwVZ1SWsZ1JPrtblbPsiwZ2eqK1aQ7H5R4pRuFq1Z0zsvFD25aYsphaNpYX3ndiA6kCAD+FjVpFvf0paRx7vR+W/yAgcFpDOB3OJoOL9Iio1AE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e44e95aacf031b990f773857270168ac42eed5fad6bd51697f9c1284ad052c97" Description="" Url=""><as:assemblyIdentity name="LiveTAS.exe" version="1.0.2.0" publicKeyToken="ab603607c34142c8" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LAPTOP-PVDD0SCN\benh</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>xJW+HPs2CpDs9If7kqFjnGlddbcka53wqfdcvHM/v+k=</DigestValue></Reference></SignedInfo><SignatureValue>KRkf7HtyI03AOKbw5fDVjMnHGHZTVYScA/LC5nx6WOkjwSz/rkiSEx+smSNc3U3SveD0y/lspj7xU/OdhoHa7Fpka/pYSq8B/JFdZASCpAZbNGVCeyyxXhf23bqyEFulTmKw7+9iOPPC2VnRuH0u1Qr/9l4e1KHWZ/ZFNv3+jko=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>oSCqd6E73QNkGNhT/vbY9uNxZXUOSK5geQSTlA5iEay6xotU4qt988Y0roXgYvwVZ1SWsZ1JPrtblbPsiwZ2eqK1aQ7H5R4pRuFq1Z0zsvFD25aYsphaNpYX3ndiA6kCAD+FjVpFvf0paRx7vR+W/yAgcFpDOB3OJoOL9Iio1AE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQXGfMT03VubJGjbwimJ7WkDANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigATABBAFAAVABPAFAALQBQAFYARABEADAAUwBDAE4AXABiAGUAbgBoMB4XDTIyMDIwMjIwNDczMFoXDTIzMDIwMzAyNDczMFowMzExMC8GA1UEAx4oAEwAQQBQAFQATwBQAC0AUABWAEQARAAwAFMAQwBOAFwAYgBlAG4AaDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAoSCqd6E73QNkGNhT/vbY9uNxZXUOSK5geQSTlA5iEay6xotU4qt988Y0roXgYvwVZ1SWsZ1JPrtblbPsiwZ2eqK1aQ7H5R4pRuFq1Z0zsvFD25aYsphaNpYX3ndiA6kCAD+FjVpFvf0paRx7vR+W/yAgcFpDOB3OJoOL9Iio1AECAwEAATANBgkqhkiG9w0BAQsFAAOBgQBk8e2yZHS18urJP1l5kYJ1+hUqK6ROCHih5D+J8y12LdiQQmsqs5zHuwlHMudmPQI/pp/jxoxjAq6uCmsZvrLceln8khYEB08qcnfFDLeKyJHwyqcixRqiSapB2TCfQPaacD5EJyb60RmpKrRwLASphRB+C3sZ19VnJz/I9Ft4zg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
