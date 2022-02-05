@@ -12,10 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\benh\OneDrive\Documents\source\repos\LiveTAS\publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -23,20 +23,19 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.github.com/Monkeytron/LiveTAS/blob/master/publish/</InstallUrl>
-    <UpdateUrl>https://raw.github.com/Monkeytron/LiveTAS/blob/master/publish/</UpdateUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/Monkeytron/LiveTAS/master/publish/</UpdateUrl>
     <SupportUrl>https://github.com/Monkeytron/LiveTAS</SupportUrl>
     <ErrorReportUrl>https://github.com/Monkeytron/LiveTAS</ErrorReportUrl>
     <ProductName>liveTAS</ProductName>
     <PublisherName>Monkeytron</PublisherName>
     <MinimumRequiredVersion>0.0.0.0</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.1.1.0</ApplicationVersion>
+    <ApplicationVersion>0.2.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
