@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://github.com/Monkeytron/LiveTAS/tree/master/publish/</InstallUrl>
-    <UpdateUrl>https://github.com/Monkeytron/LiveTAS/tree/master/publish/</UpdateUrl>
+    <InstallUrl>https://github.com/Monkeytron/LiveTAS/blob/master/publish/</InstallUrl>
+    <UpdateUrl>https://github.com/Monkeytron/LiveTAS/blob/master/publish/</UpdateUrl>
     <ProductName>liveTAS</ProductName>
     <PublisherName>Monkeytron</PublisherName>
     <MinimumRequiredVersion>0.0.0.0</MinimumRequiredVersion>
