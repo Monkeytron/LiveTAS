@@ -22,7 +22,7 @@ namespace LiveTAS
             {
                 wScan = (ushort)Methods.MapVirtualKeyA((uint)vkey, 0),
                 wVk = (ushort)vkey,
-                dwFlags = (ushort)((press?KeyEventF.KeyDown:KeyEventF.KeyUp) | KeyEventF.Scancode),
+                dwFlags = (ushort)((press?KeyEventF.KeyDown:KeyEventF.KeyUp)),
                 dwExtraInfo = Methods.GetMessageExtraInfo()
             };
             return input;

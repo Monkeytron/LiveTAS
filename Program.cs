@@ -60,8 +60,6 @@ namespace LiveTAS
 
             Console.Clear();
             Console.WriteLine("Hello! Welcome to the LiveTAS console window.");
-            Thread.Sleep(messageWait);
-            Console.WriteLine("You are using a test version, so most features are disabled.");
 
             try
             {
