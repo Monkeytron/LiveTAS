@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace LiveTAS
 {
-    [StructLayout(LayoutKind.Sequential)]public struct KeyboardInput
+    [StructLayout(LayoutKind.Sequential)] public struct KeyboardInput
     {
         public ushort wVk;
         public ushort wScan;
@@ -22,11 +22,34 @@ namespace LiveTAS
             {
                 wScan = (ushort)Methods.MapVirtualKeyA((uint)vkey, 0),
                 wVk = (ushort)vkey,
-                dwFlags = (ushort)((press?KeyEventF.KeyDown:KeyEventF.KeyUp)),
+                dwFlags = (ushort)((press ? KeyEventF.KeyDown : KeyEventF.KeyUp) | KeyEventF.Scancode),
                 dwExtraInfo = Methods.GetMessageExtraInfo()
             };
+            if (needsExtendedKey.Contains(vkey)) input.dwFlags |= (ushort)KeyEventF.ExtendedKey;
             return input;
         }
+        
+
+        public static List<VirtualKey> needsExtendedKey = new List<VirtualKey>()
+        {
+            VirtualKey.RCONTROL,
+            VirtualKey.SUBTRACT,
+            VirtualKey.RMENU,
+            VirtualKey.CANCEL,
+            VirtualKey.HOME,
+            VirtualKey.UP,
+            VirtualKey.PRIOR,
+            VirtualKey.LEFT,
+            VirtualKey.RIGHT,
+            VirtualKey.END,
+            VirtualKey.DOWN,
+            VirtualKey.NEXT,
+            VirtualKey.INSERT,
+            VirtualKey.DELETE,
+            VirtualKey.LWIN,
+            VirtualKey.RWIN,
+            VirtualKey.MENU
+        }; // These keys share scancodes with other keys, so KeyEventF.ExtendedKey must be set for these to specify which one you want.
     } // Struct to contain keyboard input data
     [StructLayout(LayoutKind.Sequential)]public struct MouseInput
     {
@@ -117,22 +140,67 @@ namespace LiveTAS
 
     public enum VirtualKey
     {
-        LBUTTON = 0x01,     // Left mouse button
-        RBUTTON = 0x02,     // Right mouse button
-        CANCEL = 0x03,      // Control - break processing
-        MBUTTON = 0x04,     // Middle mouse button
-        XBUTTON1 = 0x05,    // X1 mouse button
-        XBUTTON2 = 0x06,    // X2 mouse button
-        BACK = 0x08,        // BACKSPACE key
+        /// <summary>
+        /// Left mouse button
+        /// </summary>
+        LBUTTON = 0x01,
+
+        /// <summary>
+        /// Right mouse button
+        /// </summary>
+        RBUTTON = 0x02,
+
+        /// <summary>
+        /// Control - break processing
+        /// </summary>
+        CANCEL = 0x03,
+
+        /// <summary>
+        /// Middle mouse button
+        /// </summary>
+        MBUTTON = 0x04,
+
+        /// <summary>
+        /// X1 mouse button
+        /// </summary>
+        XBUTTON1 = 0x05,
+
+        /// <summary>
+        /// X2 mouse button
+        /// </summary>
+        XBUTTON2 = 0x06,
+
+        /// <summary>
+        /// BACKSPACE key
+        /// </summary>
+        BACK = 0x08,
+
         TAB = 0x09,
+
         CLEAR = 0x0C,
-        RETURN = 0x0D,      // ENTER key
+
+        /// <summary>
+        /// ENTER key
+        /// </summary>
+        RETURN = 0x0D, 
+
         SHIFT = 0x10,
+
         CONTROL = 0x11,
-        MENU = 0x12,        // ALT key
+
+        /// <summary>
+        /// ALT key
+        /// </summary>
+        MENU = 0x12,
+
         PAUSE = 0x13,
-        CAPITAL = 0x14,     // CAPS LOCK key
-        KANA = 0x15,        // Various IME modes
+
+        /// <summary>
+        /// CAPS LOCK key
+        /// </summary>
+        CAPITAL = 0x14,
+
+        KANA = 0x15,
         HANGUEL = 0x15,
         HANGUL = 0x15,
         IME_ON = 0x16,
@@ -141,37 +209,72 @@ namespace LiveTAS
         HANJA = 0x19,
         KANJI = 0x19,
         IME_OFF = 0x1A,
-        ESCAPE = 0x1B,      // ESC key
+
+        /// <summary>
+        /// ESC key
+        /// </summary>
+        ESCAPE = 0x1B,
+
         CONVERT = 0x1C,
         NONCONVERT = 0x1D,
         ACCEPT = 0x1E,
         MODECHANGE = 0x1F,
-        SPACE = 0x20,       // SPACEBAR
-        PRIOR = 0x21,       // PAGE UP
-        NEXT = 0x22,        // PAGE DOWN
+
+        /// <summary>
+        /// SPACEBAR
+        /// </summary>
+        SPACE = 0x20,
+
+        /// <summary>
+        /// PAGE UP
+        /// </summary>
+        PRIOR = 0x21,
+
+        /// <summary>
+        /// PAGE DOWN
+        /// </summary>
+        NEXT = 0x22,
+
         END = 0x23,
+
         HOME = 0x24,
-        LEFT = 0x25,        // Arrow keys
+
+        LEFT = 0x25,
+
         UP = 0x26,
+
         RIGHT = 0x27,
+
         DOWN = 0x28,
+
         SELECT = 0x29,
+
         PRINT = 0x2A,
+
         EXECUTE = 0x2B,
-        SNAPSHOT = 0x2C,    // PRINT SCREEN key
-        INSERT = 0x2D,     // INS key
-        DELETE = 0x2E,      // DEL key
+
+        /// <summary>
+        /// PRINT SCREEN key
+        /// </summary>
+        SNAPSHOT = 0x2C,
+
+        INSERT = 0x2D,
+
+        DELETE = 0x2E,
+
         HELP = 0x2F,
-        NUMBER0 = 0x30,     // 1!
-        NUMBER1 = 0x31,     // 2"
-        NUMBER2 = 0x32,     // 3£
-        NUMBER3 = 0x33,     // 4$
-        NUMBER4 = 0x34,     // 5%
-        NUMBER5 = 0x35,     // 6^
-        NUMBER6 = 0x36,     // 7&
-        NUMBER7 = 0x37,     // 8*
-        NUMBER8 = 0x38,     // 9(
-        NUMBER9 = 0x39,     // 0)
+
+        NUMBER0 = 0x30,
+        NUMBER1 = 0x31,
+        NUMBER2 = 0x32,
+        NUMBER3 = 0x33,
+        NUMBER4 = 0x34,
+        NUMBER5 = 0x35,
+        NUMBER6 = 0x36,
+        NUMBER7 = 0x37,
+        NUMBER8 = 0x38,
+        NUMBER9 = 0x39,
+
         A = 0x41,
         B = 0x42,
         C = 0x43,
@@ -198,10 +301,15 @@ namespace LiveTAS
         X = 0x58,
         Y = 0x59,
         Z = 0x5A,
-        LWIN = 0x5B,            // Left windows
-        RWIN = 0x5C,            // Right windows
-        APPS = 0x5D,            // Applications
+
+        LWIN = 0x5B,
+
+        RWIN = 0x5C,
+
+        APPS = 0x5D,
+
         SLEEP = 0x5F,
+
         NUMPAD0 = 0x60,
         NUMPAD1 = 0x61,
         NUMPAD2 = 0x62,
@@ -212,12 +320,37 @@ namespace LiveTAS
         NUMPAD7 = 0x67,
         NUMPAD8 = 0x68,
         NUMPAD9 = 0x69,
+
+        /// <summary>
+        /// Keypad *
+        /// </summary>
         MULTIPLY = 0x6A,
+
+        /// <summary>
+        /// Keypad +
+        /// </summary>
         ADD = 0x6B,
+        
+        /// <summary>
+        /// Not sure what key this is
+        /// </summary>
         SEPARATOR = 0x6C,
+
+        /// <summary>
+        /// Keypad -
+        /// </summary>
         SUBTRACT = 0x6D,
+
+        /// <summary>
+        /// Keypad .
+        /// </summary>
         DECIMAL = 0x6E,
+
+        /// <summary>
+        /// Keypad /
+        /// </summary>
         DIVIDE = 0x6F,
+
         F1 = 0x70,
         F2 = 0x71,
         F3 = 0x72,
@@ -242,14 +375,21 @@ namespace LiveTAS
         F22 = 0x85,
         F23 = 0x86,
         F24 = 0x87,
+
         NUMLOCK = 0x90,
-        SCROLL = 0x91,          // Scroll lock
+
+        /// <summary>
+        /// Scroll lock
+        /// </summary>
+        SCROLL = 0x91,
+
         LSHIFT = 0xA0,
         RSHIFT = 0xA1,
         LCONTROL = 0xA2,
         RCONTROL = 0xA3,
         LMENU = 0xA4,
         RMENU = 0xA5,
+
         BROWSER_BACK = 0xA6,
         BROWSER_FORWARD = 0xA7,
         BROWSER_REFRESH = 0xA8,
@@ -257,30 +397,73 @@ namespace LiveTAS
         BROWSER_SEARCH = 0xAA,
         BROWSER_FAVOURITES = 0xAB,
         BROWSER_HOME = 0xAC,
+
         VOLUME_MUTE = 0xAD,
         VOLUME_DOWN = 0xAE,
         VOLUME_UP = 0xAF,
         MEDIA_NEXT_TRACK = 0xB0,
-        MEDIA_PREV_TRACK = 0xB1, // NOPE
+        MEDIA_PREV_TRACK = 0xB1,
         MEDIA_STOP = 0xB2,
         MEDIA_PLAY_PAUSE = 0xB3,
+
         LAUNCH_MAIL = 0xB4,
         LAUNCH_MEDIA_SELECT = 0xB5,
         LAUNCH_APP1 = 0xB6,
         LAUNCH_APP2 = 0xB7,
-        OEM_1 = 0xBA, //semicolon
+
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_1 = 0xBA,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
         OEM_PLUS = 0xBB,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
         OEM_COMMA = 0xBC,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
         OEM_MINUS = 0xBD,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
         OEM_PERIOD = 0xBE,
-        OEM_2 = 0xBF, //FORWARDSLASH
-        OEM_3 = 0xC0, //SINGLEQUOTE
-        OEM_4 = 0xDB, //OPENSQBRACKET
-        OEM_5 = 0xDC, //BACKSLASH
-        OEM_6 = 0xDD, //CLOSESQBRACKET
-        OEM_7 = 0xDE, //HASHTAG
-        OEM_8 = 0xDF, // `¬
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_2 = 0xBF,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_3 = 0xC0,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_4 = 0xDB,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_5 = 0xDC,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_6 = 0xDD,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_7 = 0xDE,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
+        OEM_8 = 0xDF,
+        /// <summary>
+        /// OEM keys do different things on different computers.
+        /// </summary>
         OEM_102 = 0xE2,
+
         PROCESSKEY = 0xE5,
         ATTN = 0xF6,
         CRSEL = 0xF7,

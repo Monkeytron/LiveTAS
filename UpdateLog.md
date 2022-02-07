@@ -1,3 +1,6 @@
+# 1.2.0.0
+- Tried to fix the bug below properly.
+
 # 1.1.0.0
 - Fixed bug where arrow keys are interpreted as numpad keys if numberlock is on.
 	(Spoiler alert - it didn't fix the bug)

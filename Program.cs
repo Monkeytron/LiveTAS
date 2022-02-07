@@ -122,9 +122,21 @@ namespace LiveTAS
 
             while (true)
             {
-
-                Console.WriteLine("Enter input sequence file name here.");
-                string sequenceName = Methods.FindFile(Console.ReadLine(),".txt",new List<string>());
+                string sequenceName = "";
+                while (true)
+                {
+                    try
+                    {
+                        Console.WriteLine("Enter input sequence file name here.");
+                        sequenceName = Methods.FindFile(Console.ReadLine(), ".txt", new List<string>());
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("No such file found.");
+                        Console.WriteLine($"Please check you have spelt it correctly, and it is in the folder {Directory.GetCurrentDirectory()}");
+                    }
+                }
 
                 if (sender.ParseFile(sequenceName))
                 {
