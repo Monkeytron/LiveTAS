@@ -1,16 +1,17 @@
 # LiveTAS
 Record, edit and play back a series of key presses and mouse movements.
 
-LiveTAS is a tool for the windows OS that allows you to easily record a series of human inputs, edit the saved file and then play back the edited file.
-While it is recording, it will log when a key was pressed, which key was pressed and how long it was held for.
+LiveTAS is a tool for the windows OS that will play out a predefined series of key presses at specific intervals. It was originally intended to allow people to test what could be achieved in games if you could press keys perfectly - for example in a "Tool Assisted Speedrun" (hence the name). However, using a tool like this in online play, during competitions or to submit to a high score or speedrun leaderboard is ***considered cheating and can get you banned***. 
 
-It saves the recorded inputs in a .txt file as an "Input Sequence" - each input is recorded with the time it was pressed at so that they can be played back in the same order.
-You can edit this .txt file to add new key presses, change when a key was pressed or how long it was held for, control where the mouse goes at a specific time, ect...
+This program provides 2 functions:
+#### Input recording mode
+- Records all key presses, and optionally cursor position, at ~30fps
+- Cursor position is always recorded while mouse buttons are held down.
 
-### Word of warning:
-As this program is intended to record every key press, **PLEASE** do not type in passwords or sensitive infomation into your computer while you are recording with this program.
-I would also recommend that you do not leave your computer unattended while you are playing out an input file. This program takes control of your keyboard and mouse, which could cause problems if you let it loose on your PC.
-
+#### Input playback mode
+- Plays back a recorded "input sequence" of key presses and mouse movements by simulating those key presses for other programs.
+- This will also work with recording files that have been edited (using a text editor), or even entirely user - generated files, provided they are in the correct format.
+- In early testing, the inputs were consistently pressed at the right time to within 10 milliseconds. However, when your computer is also being used for other things this can cause the program to lag and 'miss' the input by much more, up to 100 milliseconds.
 
 ### FAQs
 
